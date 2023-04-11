@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class RecentlyPlayedStore {
-    private int capacity;
-    private int numSongsPerUser;
+    private int capacity = 3;
+    private int numSongsPerUser = 4;
     private Map<String, String> songUserMap; // song -> user
-    private Map<String, LinkedList<String>> userSongListMap; // user -> song list
+    private static Map<String, LinkedList<String>> userSongListMap; // user -> song list
 
     public RecentlyPlayedStore(int capacity, int numSongsPerUser) {
         this.capacity = capacity;
@@ -44,14 +44,15 @@ public class RecentlyPlayedStore {
             songUserMap.remove(oldestSong);
         }
     }
-  public void main(String[] args){
+  public static void main(String[] args){
       RecentlyPlayedStore obj= new RecentlyPlayedStore(3,4);
       obj.getRecentlyPlayedSongs("Abhijit");
       obj.addSongForUser("Abhijit","S1");
       obj.addSongForUser("Abhijit","S2");
       obj.addSongForUser("Abhijit","S3");
       obj.addSongForUser("Abhijit","S4");
-     System.out.println(userSongListMap.containsValue(3));
+      obj.addSongForUser("Abhijit","S5");
+     System.out.println(userSongListMap);
   }
 }
 
