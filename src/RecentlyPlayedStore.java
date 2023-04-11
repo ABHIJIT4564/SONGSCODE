@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class RecentlyPlayedStore {
-    private int capacity = 3;
-    private int numSongsPerUser = 4;
+    private int capacity;
+    private int numSongsPerUser;
     private Map<String, String> songUserMap; // song -> user
     private static Map<String, LinkedList<String>> userSongListMap; // user -> song list
 
